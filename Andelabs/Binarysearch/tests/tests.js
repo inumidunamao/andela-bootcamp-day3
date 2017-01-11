@@ -100,6 +100,27 @@ describe('Binary Search to traverse an ordered list, effectively', function() {
     });
 
   });
+
+  describe('Tests for edge cases', function() {
+
+    it('should return {count:null, index: null} for null', function() {
+      var search  = tenToOneThousand.search(null);
+      expect(search.count).toBe(null);
+      expect(search.index).toBe(null);
+    });
+
+    it('should return {count: undefined,  array length */, index: undefined} for empty argument', function() {
+      var search  = tenToOneThousand.search();
+      expect(search.count).toBe(undefined);
+      expect(search.index).toBe(undefined);
+    });
+
+    it('should return {count: 0, array length */, index: -1} for string input ', function () {
+      var search = tenToOneThousand.search('john');
+      expect(search.index).toBe(-1);
+    });
+
+  });
 });
 
 /*
